@@ -88,9 +88,4 @@ Assets/WallRunner/
 - Audio, particles, lighting and post-processing
 - Main menu and Windows build
 
-## Credits
 
-- Built on Unity's Universal 3D template, with ProBuilder for the greybox geometry.
-- Developed with the help of **Claude Code** (Anthropic's AI assistant) for design guidance,
-  step-by-step instructions, code review and the test-room generator script.
-  I typed and tested the gameplay scripts in-editor following that guidance.
