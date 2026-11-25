@@ -21,3 +21,10 @@ MonoBehaviour:
   jumpHeight: 1.3
   coyoteTime: 0.12
   jumpBufferTime: 0.12
+  wallCheckDistance: 0.9
+  runnableMask:
+    serializedVersion: 2
+    m_Bits: 128
+  wallRunSpeed: 14
+  wallRunGravity: 5
+  wallRunMaxTime: 1.5

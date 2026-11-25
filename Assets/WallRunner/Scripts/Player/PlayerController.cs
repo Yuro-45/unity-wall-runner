@@ -1,19 +1,29 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]      // Unity adds one if it is missing
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] MovementSettings settings;      // the data asset
     [SerializeField] PlayerInputReader input;
+    [SerializeField] WallSensor sensor;              // the wall sensor component
+
+    // TODO (Part 6) A: a [SerializeField] WallSensor field named "sensor",
+    //   and a public read-only "Sensor" property for it (copy the style of Settings below).
+    // TODO (Part 6) B: a third state property "WallRun" (type WallRunState), like Ground and Air,
+    //   and create it in Awake the same way.
 
     public MovementSettings Settings => settings;    // read-only access for the states
+    public WallSensor Sensor => sensor;    // read-only access for the states
     public PlayerInputReader InputReader => input;
     public CharacterController Body { get; private set; }
+
     public Vector3 Velocity;                         // current speed and direction, shared by all states
     public bool IsGrounded => Body.isGrounded;       // true if the last move touched the ground
 
     public GroundState Ground { get; private set; }  // one instance of each state, reused
     public AirState Air { get; private set; }
+    public WallRunState WallRun { get; private set; }
 
     PlayerState current;                             // the state running right now
 
@@ -29,6 +39,7 @@ public class PlayerController : MonoBehaviour
         Body = GetComponent<CharacterController>();
         Ground = new GroundState(this);              // "this" hands the state a link back to us
         Air = new AirState(this);
+        WallRun = new WallRunState(this);
     }
 
     void Start()

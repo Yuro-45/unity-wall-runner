@@ -26,5 +26,7 @@ public class AirState : PlayerState
 
         if (player.IsGrounded && player.Velocity.y <= 0f)  // touched ground while falling
             player.ChangeState(player.Ground);
+        else if (!player.IsGrounded && player.Sensor.HasWall && player.InputReader.Move.y > 0f)
+            player.ChangeState(player.WallRun);            // wall beside us + holding forward → wall run
     }
 }

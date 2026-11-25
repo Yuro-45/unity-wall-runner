@@ -52,3 +52,14 @@ crashlytics-build.properties
 .DS_Store
 Thumbs.db
 desktop.ini
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]serSettings/
+.superpowers/
+*.py
+*.pyc
+__pycache__/

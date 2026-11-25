@@ -15134,6 +15134,7 @@ GameObject:
   - component: {fileID: 1144444131}
   - component: {fileID: 1144444133}
   - component: {fileID: 1144444134}
+  - component: {fileID: 1144444135}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -15224,6 +15225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   settings: {fileID: 11400000, guid: c28771ba291074b43aff5e0e8789bffe, type: 2}
   input: {fileID: 1144444132}
+  sensor: {fileID: 1144444135}
   Velocity: {x: 0, y: 0, z: 0}
   LastGroundedTime: -999
 --- !u!114 &1144444134
@@ -15239,6 +15241,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDebugHud
   player: {fileID: 1144444133}
+  sensor: {fileID: 1144444135}
+--- !u!114 &1144444135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144444128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e944f1c09b3b2b04796ee72076bec5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WallSensor
+  settings: {fileID: 11400000, guid: c28771ba291074b43aff5e0e8789bffe, type: 2}
+  rayHeight: 1
 --- !u!1 &1154067564
 GameObject:
   m_ObjectHideFlags: 0
